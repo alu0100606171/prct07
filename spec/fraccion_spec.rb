@@ -1,6 +1,6 @@
 # File: fraccion_spec.rb
 
-require "lib/fraccion.rb"
+require "fraccion.rb"
 
 describe Fraccion do
 
