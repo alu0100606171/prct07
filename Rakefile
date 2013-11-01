@@ -1,11 +1,15 @@
+$:.unshift File.dirname(__FILE__) + 'lib'
+
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new
 task :default => :spec
 
-desc "Ejecutar las espectativas de la clase Fraccion"
+desc "Expectativas de la clase Fraccion"
 task :spec do
-  sh "rspec -I. spec/fraccion_spec.rb"
+	sh "rspec -I. spec/frac_spec.rb"
 end
 
 desc "Ejecutar con documentacion"
 task :doc do
-  sh "rspec -I. spec/fraccion_spec.rb --format documentation"
+	sh "rspec -I. spec/frac_spec.rb --format documentation"
 end
