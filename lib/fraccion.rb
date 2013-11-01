@@ -3,12 +3,17 @@
 require "lib/fraccion.rb"
 
 class Fraccion
+    include Comparable
     attr_accessor :num, :den
 
     def initialize(num,den)
         comun = mcd(num,den)
         @num = num/comun
         @den = den/comun
+    end
+
+    def <=> (other)
+        @num * other.den <=> @den * other.num
     end
 
     def mcd(x,y)
@@ -65,21 +70,21 @@ class Fraccion
         return ((self.num * f.den) % (self.den * f.num))
     end
 
-    def < (f)
-        (self.num * f.den) < (self.den * f.num)
-    end
+    #def < (f)
+    #    (self.num * f.den) < (self.den * f.num)
+    #end
 
-    def > (f)
-        (self.num * f.den) > (self.den * f.num)
-    end
+    #def > (f)
+    #    (self.num * f.den) > (self.den * f.num)
+    #end
 
-    def <= (f)
-        (self.num * f.den) <= (self.den * f.num)
-    end
+    #def <= (f)
+    #    (self.num * f.den) <= (self.den * f.num)
+    #end
 
-    def >= (f)
-        (self.num * f.den) >= (self.den * f.num)
-    end
+    #def >= (f)
+    #    (self.num * f.den) >= (self.den * f.num)
+    #end
 
 
 
